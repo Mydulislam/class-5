@@ -247,3 +247,76 @@ let value1 = null;
 if (value1 === null || value1 === undefined) {
     console.log("Value is missing or intentionally absent.");
 }
+/*=============================================================================
+   Object Data types in Javscript
+===============================================================================*/
+const person = {
+    name: "John",
+    age: 30,
+    occupation: "Developer"
+};
+console.log(person.name, person['age']); // Result: John 30
+
+//*********Add a property in this object *************
+person.gender = "Male";
+console.log(person);
+
+//*********Update property in this object *************
+person.age = 31;
+console.log(person);
+
+//*********delete property in this object *************
+delete person.occupation
+console.log(person);
+
+
+
+//*********Nested object *************
+const company = {
+    name: "ABC Corp",
+    location: {
+        city: "New York",
+        country: "USA"
+    }
+};
+console.log(company.location.city); // New York
+
+
+//*********Method in this object *************
+const calculator = {
+    add: function(a, b) {
+        return a + b;
+    },
+    subtract(a, b) {
+        return a - b; // Shorthand method syntax (ES6+)
+    }
+};
+console.log(calculator.add(5, 3)); // 8
+console.log(calculator.subtract(10, 4)); // 6
+
+//*********Object Constructor *************
+const person2 = new Object();
+person2.name = "Alice";
+person2.age = 25;
+console.log(person2);
+
+
+//*********Object Destructuring *************
+const car = {
+    name:"Bmw",
+    price:30000,
+    nature: {
+        perform: 'Good',
+        services: 'Better'
+    },
+    country: "Bangladesh"
+}
+
+const {name, price} = car;
+console.log(name); // Result: Bmw
+const {nature} = car;
+console.log(nature.perform); // Result: Gooda
+
+//*********Creating a New Object Without the Property *************
+const { country, ...newCar } = car;
+console.log(newCar); 
